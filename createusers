@@ -1,0 +1,20 @@
+#!/bin/bash
+
+EXPECTED_ARGS=2
+E_BADARGS=65
+MYSQL=`which mysql`
+
+Q1="CREATE USER '$1'@'localhost' IDENTIFIED BY '$2';"
+Q2="GRANT ALL PRIVILEGES ON *.* TO '$1'@'localhost';"
+Q3="CREATE USER '$1'@'%' IDENTIFIED BY '$2';"
+Q4="GRANT ALL PRIVILEGES ON *.* TO '$1'@'%';"
+Q5="FLUSH PRIVILEGES;"
+SQL="${Q1}${Q2}${Q3}${Q4}${Q5}"
+
+if [ $# -ne $EXPECTED_ARGS ]
+then
+  echo "Usage: $0 dbuser dbpass"
+  exit $E_BADARGS
+fi
+
+$MYSQL -uroot -p -e "$SQL"

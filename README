@@ -1,0 +1,13 @@
+This repository houses scripts we use in the CaSM Lab. 
+
+#### EC2 Scripts ####
+
+
+#### MySQL Scripts ####
+
+-- createusers --
+A bash script for easily creating MySQL users. Users created with
+this script have all privileges on on databases on the server. They
+do not have the GRANT option enabled.
+
+usage = ./createusers user password
