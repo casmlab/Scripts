@@ -37,7 +37,7 @@ def write_text_file(user_id, screen_name)
   
   result.each do |row|
     counter+=1
-    f.puts row['tweet_text']
+    f.puts row['tweet_text'].gsub(/\r/," ").gsub(/\n/," ")
   end
   
   puts "wrote #{counter} tweets to file"
