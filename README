@@ -11,3 +11,14 @@ this script have all privileges on on databases on the server. They
 do not have the GRANT option enabled.
 
 usage = ./createusers user password
+
+-- shared.rb --
+A couple of functions related to opening MySQL connections and creating hashes and arrays from result sets.
+
+#### Twitter-related Scripts ####
+
+
+#### Other Scripts ####
+
+-- resolve_batch.php --
+Lookup an array of short URLs and return a file with their canonical long URL. Requires URLResolver.php (https://github.com/mattwright/URLResolver.php)
