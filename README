@@ -22,3 +22,6 @@ A couple of functions related to opening MySQL connections and creating hashes a
 
 -- resolve_batch.php --
 Lookup an array of short URLs and return a file with their canonical long URL. Requires URLResolver.php (https://github.com/mattwright/URLResolver.php)
+
+-- find_accounts.rb --
+Takes an array of search terms and returns up to 10 URLs from a Google search that match a string that you specify. Useful for finding public social networking site accounts for a list of people or organizations.
