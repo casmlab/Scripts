@@ -20,17 +20,17 @@ begin
   b = Watir::Browser.new
   e = Watir::Exception::UnknownObjectException
   b.goto "http://google.com"
-  array = ["Helping Others Provide Excellence (Hope)","BOY SCOUTS OF AMERICA NORTHERN","Expanding Lives"]
+  array = ["Diane Ablonczy","Eve Adams","Mark Adler"]
   arrayURL = ["1","2","3","4","5","6","7","8","9","10"]
   array.each do |i|
-    b.text_field(:name, "q").set "#{i} chicago facebook" #add significant words here to disambiguate your search target
+    b.text_field(:name, "q").set "#{i} canada Twitter" #add significant words here to disambiguate your search target
     b.button(:name, "btnG").click
     sleep 3
     f.puts "\n"	
     f.puts "#{i}"
 	arrayURL.each do |i|
-	if b.a(:xpath, "//*[@id='rso']/li[#{i}]/div/h3/a").exists? and b.a(:xpath, "//*[@id='rso']/li[#{i}]/div/h3/a").href.include? "facebook.com" #Specify the string that your URL should include to improve search precision
-	f.puts b.a(:xpath, "//*[@id='rso']/li[#{i}]/div/h3/a").href
+	if b.element(:xpath, "//*[@id='rso']/li[#{i}]/div/div[3]/div[1]/cite").exists? and b.element(:xpath, "//*[@id='rso']/li[#{i}]/div/div[3]/div[1]/cite").text.include? "twitter.com" #Specify the string that your URL should include to improve search precision
+	f.puts b.element(:xpath, "//*[@id='rso']/li[#{i}]/div/div[3]/div[1]/cite").text
 	  else next
 	end
     end
